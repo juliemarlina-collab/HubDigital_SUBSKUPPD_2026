@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet><script src="./ds-base.js"></script><script src="./image-slot.js"></script></helmet>
+<div style="background:var(--surface-page);font-family:var(--font-body);color:var(--text-primary);max-width:1200px;margin:0 auto">
+
+<div style="padding:16px 32px;border-bottom:1px solid var(--border-default)">
+<div style="display:flex;justify-content:space-between;align-items:center">
+<div style="display:flex;align-items:center;gap:12px">
+<image-slot id="ppd-logo" shape="circle" style="width:40px;height:40px;flex:none" placeholder="Logo"></image-slot>
+<div style="display:flex;flex-direction:column;line-height:1.25">
+<div style="font-family:var(--font-display);font-weight:800;font-size:17px;color:var(--color-navy)">SUB SKU PPD 2026</div>
+<div style="font-size:11px;font-weight:600;color:var(--text-muted)">Hub Pengurusan Strategik Digital</div>
+</div>
+</div>
+<sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+<button onClick="{{ toggleNav }}" style="border:1px solid var(--border-default);background:#fff;border-radius:var(--radius-md);width:40px;height:36px;font-size:18px;color:var(--color-navy);cursor:pointer">☰</button>
+</sc-if>
+<sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+<div style="display:flex;gap:6px;align-items:center;font-size:14px;font-weight:600">
+<span style="background:var(--color-blue-violet);color:#fff;padding:8px 16px;border-radius:var(--radius-pill)">Utama</span>
+<a href="templates/rujukan-sku/RujukanSku.dc.html" style="color:var(--text-muted);text-decoration:none;padding:8px 16px;border-radius:var(--radius-pill)" style-hover="background:#F1F0FC">Rujukan</a>
+<a href="templates/workspace-sub-sku/Workspace.dc.html" style="color:var(--text-muted);text-decoration:none;padding:8px 16px;border-radius:var(--radius-pill)" style-hover="background:#F1F0FC">Workspace</a>
+<a href="templates/sku-2026-dashboard/SkuDashboard.dc.html" style="color:var(--text-muted);text-decoration:none;padding:8px 16px;border-radius:var(--radius-pill)" style-hover="background:#F1F0FC">Dashboard</a>
+<a href="templates/pentadbir-sku-2026/PentadbirSku.dc.html" style="color:var(--text-muted);text-decoration:none;padding:8px 16px;border-radius:var(--radius-pill)" style-hover="background:#F1F0FC">Pentadbir</a>
+</div>
+</sc-if>
+<sc-if value="{{ showMobileMenu }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;flex-direction:column;gap:2px;margin-top:16px;font-size:14px;font-weight:600">
+<span style="padding:8px 0;color:var(--color-blue-violet)">Utama</span>
+<a href="templates/rujukan-sku/RujukanSku.dc.html" style="padding:8px 0;color:inherit;text-decoration:none">Rujukan</a>
+<a href="templates/workspace-sub-sku/Workspace.dc.html" style="padding:8px 0;color:inherit;text-decoration:none">Workspace</a>
+<a href="templates/sku-2026-dashboard/SkuDashboard.dc.html" style="padding:8px 0;color:inherit;text-decoration:none">Dashboard</a>
+<a href="templates/pentadbir-sku-2026/PentadbirSku.dc.html" style="padding:8px 0;color:inherit;text-decoration:none">Pentadbir</a>
+</div>
+</sc-if>
+</div>
+</div>
+
+<div style="background:var(--color-blue-violet);padding:64px 32px 56px;border-radius:0 0 var(--radius-lg) var(--radius-lg)">
+<div style="font-family:var(--font-display);font-weight:800;font-size:clamp(40px,5.6vw,68px);color:#fff;max-width:760px;line-height:1.05">SUB-SKU PPD 2026<br><span style="color:var(--color-lime)">dalam Satu Pandangan</span></div>
+<p style="max-width:640px;color:#fff;opacity:.9;font-size:16px;line-height:1.65;margin-top:20px">Status semasa {{ totalRows }} rekod SUB-SKU PPD 2026, dikira secara langsung daripada data terkini.</p>
+
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:44px">
+<div style="display:flex;flex-direction:column;align-items:center;gap:12px">
+<div style="width:104px;height:104px;border-radius:50%;background:var(--color-navy);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:800;font-size:26px;color:#fff">764</div>
+<div style="font-size:13px;font-weight:600;color:#fff;opacity:.85;text-align:center">Rekod SUB-SKU</div>
+</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:12px">
+<div style="width:104px;height:104px;border-radius:50%;background:var(--color-lime);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:800;font-size:26px;color:var(--color-navy)">8</div>
+<div style="font-size:13px;font-weight:600;color:#fff;opacity:.85;text-align:center">TERAS Strategik</div>
+</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:12px">
+<div style="width:104px;height:104px;border-radius:50%;background:var(--color-pink);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:800;font-size:26px;color:var(--color-navy)">{{ jabatanCount }}</div>
+<div style="font-size:13px;font-weight:600;color:#fff;opacity:.85;text-align:center">Jabatan / Unit</div>
+</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:12px">
+<div style="width:104px;height:104px;border-radius:50%;background:var(--color-coral);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:800;font-size:24px;color:#fff">{{ overallPctDisplay }}%</div>
+<div style="font-size:13px;font-weight:600;color:#fff;opacity:.85;text-align:center">Disahkan Keseluruhan</div>
+</div>
+</div>
+</div>
+
+<div style="padding:56px 32px 8px">
+<h2 style="font-family:var(--font-display);font-weight:700;font-size:22px;color:var(--color-navy);margin:0 0 24px">Pengenalan SUB-SKU PPD 2026</h2>
+<div style="display:grid;grid-template-columns:1.1fr 1fr;gap:20px;align-items:stretch">
+<div style="background:var(--color-navy);border-radius:var(--radius-lg);padding:32px;display:flex;flex-direction:column;gap:16px;justify-content:center">
+<p style="color:#fff;opacity:.92;font-size:15px;line-height:1.7;margin:0">SUB-SKU PPD 2026 ialah hub pengurusan strategik digital Politeknik Port Dickson yang dibangunkan bagi memudahkan proses rujukan, penyelarasan, pengemaskinian dan pemantauan rekod SUB-SKU secara berpusat.</p>
+<p style="color:#fff;opacity:.75;font-size:14px;line-height:1.7;margin:0">Portal ini membantu pihak pengurusan, Ketua Jabatan dan Unit, PIC serta Pentadbir SUB-SKU mendapatkan maklumat semasa, menyemak status pengesahan, mengenal pasti tindakan susulan dan mengakses dokumen strategik dengan lebih cepat, jelas dan tersusun.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="border:1px solid var(--border-default);border-radius:var(--radius-md);padding:18px 20px;display:flex;gap:14px;align-items:flex-start;flex:1">
+<div style="width:36px;height:36px;border-radius:50%;background:var(--color-blue-violet);flex:none;display:flex;align-items:center;justify-content:center;font-size:15px;color:#fff">📚</div>
+<div><div style="font-weight:700;font-size:14px;color:var(--color-navy);margin-bottom:4px">Rujukan Berpusat</div><div style="font-size:12px;color:var(--text-muted);line-height:1.5">Menghimpunkan dokumen strategik, KPI, akreditasi, takwim dan sumber rasmi dalam satu portal.</div></div>
+</div>
+<div style="border:1px solid var(--border-default);border-radius:var(--radius-md);padding:18px 20px;display:flex;gap:14px;align-items:flex-start;flex:1">
+<div style="width:36px;height:36px;border-radius:50%;background:var(--color-coral);flex:none;display:flex;align-items:center;justify-content:center;font-size:15px;color:#fff">📈</div>
+<div><div style="font-weight:700;font-size:14px;color:var(--color-navy);margin-bottom:4px">Pemantauan Masa Semasa</div><div style="font-size:12px;color:var(--text-muted);line-height:1.5">Memaparkan kemajuan pengemaskinian, status pengesahan dan taburan rekod mengikut TERAS serta Jabatan/Unit.</div></div>
+</div>
+<div style="border:1px solid var(--border-default);border-radius:var(--radius-md);padding:18px 20px;display:flex;gap:14px;align-items:flex-start;flex:1">
+<div style="width:36px;height:36px;border-radius:50%;background:var(--color-pink);flex:none;display:flex;align-items:center;justify-content:center;font-size:15px;color:var(--color-navy)">🧭</div>
+<div><div style="font-weight:700;font-size:14px;color:var(--color-navy);margin-bottom:4px">Penyelarasan Lebih Sistematik</div><div style="font-size:12px;color:var(--text-muted);line-height:1.5">Membantu PIC dan Pentadbir menyemak, menyelaras serta melengkapkan rekod berdasarkan tanggungjawab masing-masing.</div></div>
+</div>
+</div>
+</div>
+</div>
+
+<div style="padding:56px 32px 8px">
+<h2 style="font-family:var(--font-display);font-weight:700;font-size:22px;color:var(--color-navy);margin:0 0 4px">Kemajuan Mengikut TERAS</h2>
+<p style="font-size:13px;color:var(--text-muted);margin:0 0 28px">Dikira secara langsung daripada {{ totalRows }} rekod semasa — setiap gelung menunjukkan peratus rekod yang telah disahkan.</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px">
+<sc-for list="{{ terasGauges }}" as="t" hint-placeholder-count="8">
+<div style="border:1px solid var(--border-default);border-radius:var(--radius-md);padding:14px;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center">
+<div style="width:60px;height:60px;border-radius:50%;background:{{ t.gaugeBg }};display:flex;align-items:center;justify-content:center">
+<div style="width:44px;height:44px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:800;font-size:13px;color:var(--color-navy)">{{ t.pct }}%</div>
+</div>
+<div style="font-size:11px;font-weight:700;color:var(--color-navy);line-height:1.3">{{ t.label }}</div>
+<sc-if value="{{ t.notStarted }}" hint-placeholder-val="{{ false }}"><div style="font-size:9px;font-weight:700;color:var(--color-coral);text-transform:uppercase;letter-spacing:.03em">Belum Bermula</div></sc-if>
+<div style="font-size:10px;color:var(--text-muted)">{{ t.valid }} / {{ t.total }} disahkan</div>
+</div>
+</sc-for>
+</div>
+</div>
+
+<div style="padding:56px 32px 8px">
+<div style="background:#F1F0FC;border-radius:var(--radius-lg);padding:36px 32px">
+<h2 style="font-family:var(--font-display);font-weight:700;font-size:22px;color:var(--color-navy);margin:0 0 4px">Kitaran Pengemaskinian</h2>
+<p style="font-size:13px;color:var(--text-muted);margin:0 0 28px">Fasa semasa proses pengemaskinian dan pengesahan SUB-SKU 2026.</p>
+<div style="display:flex;gap:0;align-items:flex-start">
+<sc-for list="{{ phases }}" as="p" hint-placeholder-count="4">
+<div style="flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;position:relative">
+<sc-if value="{{ p.hasLine }}" hint-placeholder-val="{{ true }}">
+<div style="position:absolute;top:24px;left:-50%;width:100%;height:3px;background:{{ p.lineColor }};z-index:0"></div>
+</sc-if>
+<div style="width:48px;height:48px;border-radius:50%;background:{{ p.dotColor }};color:{{ p.dotText }};display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;z-index:1;font-family:var(--font-display)">{{ p.n }}</div>
+<div style="font-size:13px;font-weight:700;color:var(--color-navy);margin-top:12px;max-width:160px">{{ p.label }}</div>
+<div style="font-size:12px;color:var(--text-muted);margin-top:4px;max-width:170px;line-height:1.4">{{ p.desc }}</div>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+
+<div style="padding:56px 32px 8px">
+<h2 style="font-family:var(--font-display);font-weight:700;font-size:22px;color:var(--color-navy);margin:0 0 20px">Akses Pantas</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px">
+<a href="templates/rujukan-sku/RujukanSku.dc.html" style="text-decoration:none;color:inherit;border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:26px;display:flex;flex-direction:column;gap:12px">
+<div style="width:44px;height:44px;border-radius:50%;background:var(--color-blue-violet);display:flex;align-items:center;justify-content:center;font-size:19px;color:#fff">📋</div>
+<div style="font-family:var(--font-display);font-weight:700;font-size:17px;color:var(--color-navy)">Rujukan SKU</div>
+<div style="font-size:13px;color:var(--text-muted);line-height:1.5">Dokumen strategik, KPI, akreditasi dan takwim rasmi.</div>
+</a>
+<a href="templates/workspace-sub-sku/Workspace.dc.html" style="text-decoration:none;color:inherit;border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:26px;display:flex;flex-direction:column;gap:12px">
+<div style="width:44px;height:44px;border-radius:50%;background:var(--color-coral);display:flex;align-items:center;justify-content:center;font-size:19px;color:#fff">🗃️</div>
+<div style="font-family:var(--font-display);font-weight:700;font-size:17px;color:var(--color-navy)">Workspace</div>
+<div style="font-size:13px;color:var(--text-muted);line-height:1.5">Cari dan semak rekod mengikut Jabatan/Unit.</div>
+</a>
+<a href="templates/sku-2026-dashboard/SkuDashboard.dc.html" style="text-decoration:none;color:inherit;border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:26px;display:flex;flex-direction:column;gap:12px">
+<div style="width:44px;height:44px;border-radius:50%;background:var(--color-lime);display:flex;align-items:center;justify-content:center;font-size:19px;color:var(--color-navy)">📊</div>
+<div style="font-family:var(--font-display);font-weight:700;font-size:17px;color:var(--color-navy)">Dashboard</div>
+<div style="font-size:13px;color:var(--text-muted);line-height:1.5">Tapis dan cari {{ totalRows }} rekod mengikut status.</div>
+</a>
+<a href="templates/pentadbir-sku-2026/PentadbirSku.dc.html" style="text-decoration:none;color:inherit;border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:26px;display:flex;flex-direction:column;gap:12px">
+<div style="width:44px;height:44px;border-radius:50%;background:var(--color-pink);display:flex;align-items:center;justify-content:center;font-size:19px;color:var(--color-navy)">🗂️</div>
+<div style="font-family:var(--font-display);font-weight:700;font-size:17px;color:var(--color-navy)">Pentadbir</div>
+<div style="font-size:13px;color:var(--text-muted);line-height:1.5">Direktori Pentadbir SUB-SKU mengikut Jabatan dan Unit.</div>
+</a>
+</div>
+</div>
+
+<div style="border-top:1px solid var(--border-default);padding:24px 32px;display:flex;flex-direction:column;gap:6px;margin-top:32px">
+<div style="font-size:13px;color:var(--text-muted)">© 2026 Politeknik Port Dickson. Hak Cipta Terpelihara. &nbsp;·&nbsp; SUB-SKU PPD 2026 | Hub Pengurusan Strategik Digital</div>
+<div style="font-size:11px;color:var(--text-muted);opacity:.8">Dibangunkan oleh Julie Marlina binti Hasan — Sekretariat Data &amp; Maklumat, Jawatankuasa Pengurusan Strategik PPD.</div>
+</div>
+
+</div>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 56"><rect width="80" height="56" fill="#0A0E4A"/><circle cx="24" cy="28" r="12" fill="#5457FF"/><circle cx="56" cy="28" r="12" fill="#CFFA66"/><text x="40" y="50" font-size="7" fill="#fff" text-anchor="middle" font-family="sans-serif">SKU 2026</text></svg></template>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1200,&quot;height&quot;:1400}}">
+const TONE_COLORS = { blue: 'var(--color-blue-violet)', lime: 'var(--color-lime)', pink: 'var(--color-pink)', coral: 'var(--color-coral)' };
+const TONE_CYCLE = ['blue', 'lime', 'pink', 'coral'];
+const VALID_STATUSES = ['VALID — KPI RASMI', 'VALID — RUJUKAN STRATEGIK', 'VALID — SAHKAN SUMBER', 'VALID DENGAN PINDAAN'];
+
+class Component extends DCLogic {
+  state = { rows: [], jabatanList: [], terasList: [], navOpen: false, isMobile: false };
+  componentDidMount() {
+    this.updateIsMobile = () => this.setState({ isMobile: window.innerWidth < 860 });
+    this.updateIsMobile();
+    window.addEventListener('resize', this.updateIsMobile);
+    import('./templates/sku-2026-dashboard/data.js').then(mod => {
+      this.setState({ rows: mod.rows, jabatanList: mod.jabatanList, terasList: mod.terasList });
+    });
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateIsMobile);
+  }
+  renderVals() {
+    const { rows, jabatanList, terasList, navOpen, isMobile } = this.state;
+    const totalRows = rows.length;
+    const validCount = rows.filter(r => VALID_STATUSES.includes(r.status)).length;
+    const overallPct = totalRows ? Math.round((validCount / totalRows) * 100) : 0;
+    const overallPctDisplay = totalRows ? Math.round((validCount / totalRows) * 1000) / 10 : 0;
+
+    const byTeras = {};
+    for (const r of rows) {
+      const t = r.teras || 'Lain-lain';
+      if (!byTeras[t]) byTeras[t] = { total: 0, valid: 0 };
+      byTeras[t].total++;
+      if (VALID_STATUSES.includes(r.status)) byTeras[t].valid++;
+    }
+    const terasGauges = (terasList.length ? terasList : Object.keys(byTeras)).map((label, i) => {
+      const s = byTeras[label] || { total: 0, valid: 0 };
+      const pct = s.total ? Math.round((s.valid / s.total) * 100) : 0;
+      const tone = TONE_CYCLE[i % TONE_CYCLE.length];
+      const color = TONE_COLORS[tone];
+      return {
+        label, total: s.total, valid: s.valid, pct, notStarted: s.total > 0 && s.valid === 0,
+        gaugeBg: `conic-gradient(${color} 0% ${pct}%, #EDEBFA ${pct}% 100%)`,
+      };
+    });
+
+    const phases = [
+      { n: 1, label: 'Pengemaskinian Dibuka', desc: 'Jabatan/Unit menyemak rekod', dotColor: 'var(--color-blue-violet)', dotText: '#fff', lineColor: 'var(--color-blue-violet)', hasLine: false },
+      { n: 2, label: 'Semakan PIC', desc: 'PIC mengesahkan data & sasaran', dotColor: '#EDEBFA', dotText: 'var(--color-navy)', lineColor: 'var(--color-blue-violet)', hasLine: true },
+      { n: 3, label: 'Pengesahan', desc: 'Sekretariat mengesahkan rekod', dotColor: '#EDEBFA', dotText: 'var(--color-navy)', lineColor: '#EDEBFA', hasLine: true },
+      { n: 4, label: 'Kunci Muktamad', desc: 'Data dikunci untuk laporan', dotColor: '#EDEBFA', dotText: 'var(--color-navy)', lineColor: '#EDEBFA', hasLine: true },
+    ];
+
+    return {
+      isMobile, isDesktop: !isMobile, showMobileMenu: isMobile && navOpen,
+      toggleNav: () => this.setState(s => ({ navOpen: !s.navOpen })),
+      totalRows, overallPct, overallPctDisplay, jabatanCount: jabatanList.length,
+      terasGauges, phases,
+    };
+  }
+}
+
+</script>
+</body>
+</html>
