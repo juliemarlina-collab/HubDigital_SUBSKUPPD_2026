@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="SKU 2026 Dashboard (Searchable Reference)" description="Filterable, searchable dashboard for the 764-item Sub-SKU 2026 master list — replaces a raw spreadsheet with a browsable page" -->
+<helmet>
+<script src="./ds-base.js"></script>
+<script src="./image-slot.js"></script>
+</helmet>
+<div style="background:var(--surface-page);font-family:var(--font-body);color:var(--text-primary);max-width:1200px;margin:0 auto">
+
+<div style="background:#fff;padding:20px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;border-bottom:1px solid var(--border-default)">
+<a href="../../HomepageInfographic.dc.html" style="display:flex;align-items:center;gap:10px;text-decoration:none">
+<image-slot id="ppd-logo" shape="circle" style="width:44px;height:44px" placeholder="Logo"></image-slot>
+<div style="display:flex;flex-direction:column;line-height:1.2">
+<strong style="font-family:var(--font-display);font-weight:800;font-size:17px;color:var(--color-navy)">SUB SKU PPD 2026</strong>
+<span style="font-size:12px;font-weight:600;color:var(--text-muted)">Hub Pengurusan Strategik Digital</span>
+</div>
+</a>
+<sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+<button onClick="{{ toggleNav }}" style="border:1px solid var(--border-default);background:#fff;border-radius:10px;width:40px;height:36px;font-size:18px;color:var(--color-navy);cursor:pointer">☰</button>
+</sc-if>
+<sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+<div style="display:flex;gap:8px;align-items:center">
+<a href="../../HomepageInfographic.dc.html" style="text-decoration:none;color:var(--color-navy);font-weight:600;font-size:15px;padding:10px 14px">Utama</a>
+<a href="../rujukan-sku/RujukanLive.dc.html" style="text-decoration:none;color:var(--color-navy);font-weight:600;font-size:15px;padding:10px 14px">Rujukan</a>
+<a href="../workspace-sub-sku/Workspace.dc.html" style="text-decoration:none;color:var(--color-navy);font-weight:600;font-size:15px;padding:10px 14px">Workspace</a>
+<a href="SkuDashboard.dc.html" style="text-decoration:none;background:var(--color-blue-violet);color:#fff;font-weight:700;font-size:15px;padding:10px 24px;border-radius:999px">Dashboard</a>
+<a href="../pentadbir-sku-2026/PentadbirSku.dc.html" style="text-decoration:none;color:var(--color-navy);font-weight:600;font-size:15px;padding:10px 14px">Pentadbir</a>
+</div>
+</sc-if>
+<sc-if value="{{ showMobileMenu }}" hint-placeholder-val="{{ false }}">
+<div style="width:100%;display:flex;flex-direction:column;gap:4px;padding-top:12px;border-top:1px solid var(--border-default)">
+<a href="../../HomepageInfographic.dc.html" style="text-decoration:none;color:var(--color-navy);font-weight:600;font-size:15px;padding:8px 0">Utama</a>
+<a href="../rujukan-sku/RujukanLive.dc.html" style="text-decoration:none;color:var(--color-navy);font-weight:600;font-size:15px;padding:8px 0">Rujukan</a>
+<a href="../workspace-sub-sku/Workspace.dc.html" style="text-decoration:none;color:var(--color-navy);font-weight:600;font-size:15px;padding:8px 0">Workspace</a>
+<a href="SkuDashboard.dc.html" style="text-decoration:none;color:var(--color-blue-violet);font-weight:700;font-size:15px;padding:8px 0">Dashboard</a>
+<a href="../pentadbir-sku-2026/PentadbirSku.dc.html" style="text-decoration:none;color:var(--color-navy);font-weight:600;font-size:15px;padding:8px 0">Pentadbir</a>
+</div>
+</sc-if>
+</div>
+
+<div style="background:var(--color-blue-violet);padding:44px 32px;border-radius:0 0 var(--radius-lg) var(--radius-lg)">
+<div style="font-family:var(--font-display);font-weight:800;font-size:clamp(26px,3vw,36px);color:#fff">Dashboard Pemantauan</div>
+<p style="max-width:680px;color:#fff;opacity:.92;font-size:15px;line-height:1.6;margin-top:12px">Senarai penuh 764 Sub-SKU 2026 kini boleh dicari dan ditapis terus di halaman ini mengikut Jabatan/Unit, TERAS, atau status pengesahan — tanpa perlu membuka hamparan penuh.</p>
+<div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:20px">
+<a href="https://docs.google.com/spreadsheets/d/1kUq1g7UZiAuTvW3nmheYllDNGkYNDDmr/edit?usp=sharing&ouid=114072147696190551583&rtpof=true&sd=true" target="_blank" rel="noopener" style="display:inline-block;background:var(--color-lime);color:var(--color-navy);font-weight:700;font-size:14px;padding:12px 22px;border-radius:var(--radius-pill);text-decoration:none">Lihat MASTER SUB-SKU 2026 →</a>
+<a href="https://docs.google.com/spreadsheets/d/1cfLvd8aVYTWm2CME39vOF5PtarW4DOkAkJbSih-pAgg/edit?usp=sharing" target="_blank" rel="noopener" style="display:inline-block;background:#fff;color:var(--color-navy);font-weight:700;font-size:14px;padding:12px 22px;border-radius:var(--radius-pill);text-decoration:none">Buka SUB-SKU Mengikut Jabatan/Unit →</a>
+</div>
+<p style="max-width:680px;color:#fff;opacity:.85;font-size:13px;line-height:1.5;margin-top:12px">MASTER SUB-SKU 2026: rujukan utama yang mengandungi keseluruhan rekod, pemetaan, sasaran dan status validasi SUB-SKU PPD 2026. SUB-SKU Mengikut Jabatan/Unit: paparan capaian yang telah disusun mengikut Jabatan/Unit untuk memudahkan pengguna mendapatkan dan menyalin rekod masing-masing.</p>
+</div>
+
+<div style="padding:40px 32px 8px">
+<h2 style="font-family:var(--font-display);font-weight:700;font-size:20px;color:var(--color-navy);margin:0 0 16px">Taburan Mengikut Status Validasi</h2>
+<div style="display:flex;align-items:center;gap:32px;flex-wrap:wrap">
+<div style="width:150px;height:150px;border-radius:50%;position:relative;flex-shrink:0;background:{{ donutBackground }}">
+<div style="position:absolute;inset:16px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:var(--color-navy);text-align:center">{{ totalRows }} rekod</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px">
+<sc-for list="{{ statusLegend }}" as="s" hint-placeholder-count="6">
+<div style="display:flex;align-items:center;gap:12px;font-size:13px">
+<x-import component-from-global-scope="SKUPPDDesignSystrem_48354e.Badge" tone="{{ s.tone }}" hint-size="120,22">{{ s.label }}</x-import>
+<span style="color:var(--text-muted)">{{ s.count }}</span>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+
+<div id="teras-summary" style="padding:8px 32px 8px">
+<h2 style="font-family:var(--font-display);font-weight:700;font-size:20px;color:var(--color-navy);margin:0 0 4px">Status Mengikut TERAS</h2>
+<p style="font-size:13px;color:var(--text-muted);margin:0 0 16px">Dikira secara langsung daripada {{ totalRows }} rekod Sub-SKU semasa.</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px">
+<sc-for list="{{ terasSummary }}" as="t" hint-placeholder-count="8">
+<div style="border:1px solid var(--border-default);border-radius:var(--radius-md);padding:16px 18px">
+<div style="display:flex;justify-content:space-between;font-size:13px;font-weight:700;color:var(--color-navy)"><span>{{ t.label }}</span><span>{{ t.pct }}%</span></div>
+<div style="height:8px;background:#EDEBFA;border-radius:var(--radius-pill);margin-top:8px;overflow:hidden"><div style="height:100%;background:var(--color-blue-violet);border-radius:var(--radius-pill);width:{{ t.pct }}%"></div></div>
+<div style="font-size:12px;color:var(--text-muted);margin-top:6px">{{ t.valid }} / {{ t.total }} Sub-SKU disahkan</div>
+</div>
+</sc-for>
+</div>
+</div>
+
+<div style="padding:32px 32px 8px">
+<h2 style="font-family:var(--font-display);font-weight:700;font-size:20px;color:var(--color-navy);margin:0 0 4px">Ringkasan Mengikut Kluster</h2>
+<p style="font-size:13px;color:var(--text-muted);margin:0 0 16px">Dikira secara langsung daripada medan Kluster pada Hamparan Induk.</p>
+<div style="border:1px solid var(--border-default);border-radius:var(--radius-md);overflow:hidden">
+<div style="display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr 0.8fr;gap:0;background:#F1F0FC;padding:10px 16px;font-size:12px;font-weight:700;color:var(--color-navy);text-transform:uppercase;letter-spacing:.03em">
+<div>Kluster</div><div>Jumlah</div><div>Disahkan</div><div>Belum Disahkan</div><div>% Sah</div>
+</div>
+<sc-for list="{{ klusterSummary }}" as="k" hint-placeholder-count="10">
+<div style="display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr 0.8fr;gap:0;padding:10px 16px;font-size:13px;border-top:1px solid var(--border-default)">
+<div style="font-weight:600">{{ k.name }}</div><div>{{ k.total }}</div><div>{{ k.valid }}</div><div>{{ k.pending }}</div><div style="font-weight:700;color:var(--color-blue-violet)">{{ k.pct }}%</div>
+</div>
+</sc-for>
+</div>
+</div>
+
+<div style="padding:40px 32px 16px">
+<h2 style="font-family:var(--font-display);font-weight:700;font-size:22px;color:var(--color-navy);margin:0 0 6px">Cari &amp; Tapis Sub-SKU</h2>
+<p style="color:var(--text-muted);font-size:14px;margin:0 0 20px">Taip kata kunci, atau pilih Jabatan/Unit dan TERAS untuk menapis senarai 764 Sub-SKU 2026 di bawah.</p>
+<div style="display:flex;gap:10px;align-items:flex-start;background:#F1F0FC;border:1px solid var(--border-default);border-radius:var(--radius-md);padding:14px 18px;margin-bottom:16px">
+<span style="font-size:16px">💡</span>
+<span style="font-size:13px;color:var(--color-navy);line-height:1.5">Gunakan penapis <strong>Jabatan/Unit</strong> di bawah untuk memaparkan hanya Sub-SKU bagi Jabatan/Unit anda sahaja.</span>
+</div>
+<div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:8px">
+<input type="text" placeholder="Cari mengikut PIC, Sub-SKU, atau kata kunci..." value="{{ search }}" onChange="{{ onSearch }}" style="flex:2;min-width:240px;padding:12px 16px;border-radius:var(--radius-md);border:1.5px solid var(--border-default);font-size:14px;font-family:var(--font-body)">
+<select value="{{ jabatan }}" onChange="{{ onJabatan }}" style="flex:1;min-width:180px;padding:12px 16px;border-radius:var(--radius-md);border:1.5px solid var(--border-default);font-size:14px;font-family:var(--font-body)">
+<sc-for list="{{ jabatanOptions }}" as="j" hint-placeholder-count="30"><option value="{{ j.value }}">{{ j.label }}</option></sc-for>
+</select>
+<select value="{{ teras }}" onChange="{{ onTeras }}" style="flex:1;min-width:180px;padding:12px 16px;border-radius:var(--radius-md);border:1.5px solid var(--border-default);font-size:14px;font-family:var(--font-body)">
+<sc-for list="{{ terasOptions }}" as="t" hint-placeholder-count="8"><option value="{{ t.value }}">{{ t.label }}</option></sc-for>
+</select>
+<select value="{{ status }}" onChange="{{ onStatus }}" style="flex:1;min-width:180px;padding:12px 16px;border-radius:var(--radius-md);border:1.5px solid var(--border-default);font-size:14px;font-family:var(--font-body)">
+<sc-for list="{{ statusOptions }}" as="s" hint-placeholder-count="6"><option value="{{ s.value }}">{{ s.label }}</option></sc-for>
+</select>
+<button onClick="{{ onReset }}" style="padding:12px 18px;border-radius:var(--radius-md);border:1.5px solid var(--border-default);background:#fff;font-size:14px;font-weight:600;color:var(--color-navy);cursor:pointer">Tetapkan Semula Penapis</button>
+</div>
+<div style="font-size:13px;color:var(--text-muted);margin-bottom:16px">Memaparkan <strong style="color:var(--color-navy)">{{ rangeStart }}–{{ rangeEnd }}</strong> daripada <strong style="color:var(--color-navy)">{{ count }}</strong> rekod sepadan ({{ totalRows }} jumlah keseluruhan)</div>
+
+<div style="border:1px solid var(--border-default);border-radius:var(--radius-md);overflow:hidden;margin-bottom:20px">
+<div style="display:grid;grid-template-columns:1.4fr 1.2fr 2.6fr 1.4fr 1.4fr 1.2fr;gap:0;background:#F1F0FC;padding:10px 16px;font-size:12px;font-weight:700;color:var(--color-navy);text-transform:uppercase;letter-spacing:.03em">
+<div>TERAS</div><div>Jabatan/Unit</div><div>Sub-SKU 2026</div><div>Sasaran</div><div>Status</div><div>Tindakan</div>
+</div>
+<sc-for list="{{ pageRows }}" as="r" hint-placeholder-count="12">
+<div style="display:grid;grid-template-columns:1.4fr 1.2fr 2.6fr 1.4fr 1.4fr 1.2fr;gap:0;padding:12px 16px;font-size:13px;border-top:1px solid var(--border-default);background:{{ r.rowBg }}">
+<div style="color:var(--text-muted)">{{ r.teras }}</div>
+<div style="font-weight:600">{{ r.jabatan }}</div>
+<div style="line-height:1.5"><strong>{{ r.pic }}</strong>: {{ r.subskuText }}</div>
+<div style="color:var(--text-muted)">{{ r.sasaran }}</div>
+<div><x-import component-from-global-scope="SKUPPDDesignSystrem_48354e.Badge" tone="{{ r.tone }}" hint-size="100,22">{{ r.status }}</x-import><div style="font-size:11px;color:var(--text-muted);margin-top:4px">{{ r.approval }} · {{ r.source }}</div></div>
+<div style="display:flex;flex-direction:column;gap:4px"><a href="../workspace-sub-sku/Workspace.dc.html?jabatan={{ r.jabatan }}" style="color:var(--color-blue-violet);text-decoration:none;font-weight:600;font-size:12px">Buka Workspace →</a><button onClick="{{ r.onToggleEdit }}" style="border:none;background:none;color:var(--color-blue-violet);text-decoration:none;font-weight:600;font-size:12px;padding:0;text-align:left;cursor:pointer">{{ r.editLabel }}</button><a href="{{ sourceUrl }}" target="_blank" rel="noopener" style="color:var(--text-muted);text-decoration:none;font-weight:600;font-size:12px">Buka Sumber →</a></div>
+</div>
+<sc-if value="{{ r.editOpen }}" hint-placeholder-val="{{ false }}">
+<div style="padding:12px 16px;border-top:1px solid var(--border-default);background:#FAFAFE;display:flex;flex-direction:column;gap:8px">
+<div style="font-size:11px;font-weight:700;color:var(--color-navy);text-transform:uppercase;letter-spacing:.04em">Cadangkan Kemaskini — BIL {{ r.bil }}</div>
+<textarea placeholder="Cadangan status/kemaskini baharu..." value="{{ r.cadangan }}" onChange="{{ r.onCadangan }}" rows="2" style="width:100%;padding:8px 10px;border-radius:var(--radius-md);border:1.5px solid var(--border-default);font-size:12px;font-family:var(--font-body);resize:vertical"></textarea>
+<textarea placeholder="Catatan tambahan (pilihan)..." value="{{ r.catatanDraft }}" onChange="{{ r.onCatatanDraft }}" rows="2" style="width:100%;padding:8px 10px;border-radius:var(--radius-md);border:1.5px solid var(--border-default);font-size:12px;font-family:var(--font-body);resize:vertical"></textarea>
+<button onClick="{{ r.onSubmitKemaskini }}" disabled="{{ r.submitDisabled }}" style="align-self:flex-start;border:none;background:var(--color-blue-violet);color:#fff;font-weight:700;font-size:12px;padding:8px 16px;border-radius:var(--radius-pill);cursor:pointer;opacity:{{ r.submitOpacity }}">{{ r.submitLabel }}</button>
+</div>
+</sc-if>
+</sc-for>
+<sc-if value="{{ isEmpty }}" hint-placeholder-val="{{ false }}">
+<div style="padding:32px;text-align:center;color:var(--text-muted);font-size:14px">Tiada Sub-SKU sepadan dengan carian/tapisan ini.</div>
+</sc-if>
+</div>
+
+<sc-if value="{{ showPagination }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;justify-content:center;align-items:center;gap:12px;margin-bottom:48px;font-size:14px">
+<button onClick="{{ prevPage }}" disabled="{{ isFirstPage }}" style="padding:8px 16px;border-radius:var(--radius-md);border:1px solid var(--border-default);background:#fff;cursor:pointer">← Sebelum</button>
+<span style="color:var(--text-muted)">Halaman {{ page }} daripada {{ pageCount }}</span>
+<button onClick="{{ nextPage }}" disabled="{{ isLastPage }}" style="padding:8px 16px;border-radius:var(--radius-md);border:1px solid var(--border-default);background:#fff;cursor:pointer">Seterusnya →</button>
+</div>
+</sc-if>
+<sc-if value="{{ hideMargin }}" hint-placeholder-val="{{ true }}"><div style="margin-bottom:48px"></div></sc-if>
+</div>
+
+<div style="border-top:1px solid var(--border-default);padding:24px 32px;font-size:13px;color:var(--text-muted)">Sumber utama: MASTER SUB-SKU 2026 — Politeknik Port Dickson · Data disemak Jun 2026. Gunakan paparan <a href="https://docs.google.com/spreadsheets/d/1cfLvd8aVYTWm2CME39vOF5PtarW4DOkAkJbSih-pAgg/edit?usp=sharing" style="color:var(--color-blue-violet)">SUB-SKU 2026 Mengikut Jabatan/Unit</a> untuk membuka, mencari dan menyalin rekod yang berkaitan dengan Jabatan/Unit masing-masing.
+<div style="margin-top:10px">© 2026 Politeknik Port Dickson. Hak Cipta Terpelihara.</div>
+<div style="font-size:11px;opacity:.8;margin-top:2px">Dibangunkan oleh Julie Marlina binti Hasan, Sekretariat Data &amp; Maklumat, Jawatankuasa Pengurusan Strategik Politeknik Port Dickson.</div>
+</div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1200,&quot;height&quot;:1000}}">
+const STATUS_TONE = { 'VALID — KPI RASMI': 'lime', 'VALID — RUJUKAN STRATEGIK': 'blue', 'VALID — SAHKAN SUMBER': 'blue', 'VALID DENGAN PINDAAN': 'pink', 'CADANGAN BAHARU': 'coral', 'BELUM DISAHKAN': 'coral' };
+const STATUS_APPROVAL = { 'VALID — KPI RASMI': 'Disahkan', 'VALID — RUJUKAN STRATEGIK': 'Disahkan', 'VALID — SAHKAN SUMBER': 'Disahkan', 'VALID DENGAN PINDAAN': 'Disahkan dengan Pindaan', 'CADANGAN BAHARU': 'Belum Disahkan', 'BELUM DISAHKAN': 'Belum Disahkan' };
+const STATUS_SOURCE = { 'VALID — KPI RASMI': 'KPI Rasmi', 'VALID — RUJUKAN STRATEGIK': 'Rujukan Strategik', 'VALID — SAHKAN SUMBER': 'Sumber Disahkan', 'VALID DENGAN PINDAAN': '—', 'CADANGAN BAHARU': 'Cadangan Baharu', 'BELUM DISAHKAN': '—' };
+const VALID_STATUSES = ['VALID — KPI RASMI', 'VALID — RUJUKAN STRATEGIK', 'VALID — SAHKAN SUMBER', 'VALID DENGAN PINDAAN'];
+const PAGE_SIZE = 50;
+const API_URL = 'https://script.google.com/macros/s/AKfycbwZ_fBBMI1bavMM4Nhfc5Sea_yO_GH-tleFNCW7kYx31ZlsiIuMgFLDdD-_lLOkakmv/exec';
+const SOURCE_URL = 'https://docs.google.com/spreadsheets/d/1OJaR_36HZ2ggSP2mj17zzyGTEXTAXcl8BIxuyTqr8kU/edit';
+
+class Component extends DCLogic {
+  state = {
+    rows: [], jabatanList: [], terasList: [],
+    search: '', jabatan: 'ALL', teras: 'ALL', status: 'ALL', page: 1,
+    navOpen: false, isMobile: false, lainOpen: false,
+    editOpen: {}, editDrafts: {}, submitState: {},
+  };
+  componentDidMount() {
+    this.updateIsMobile = () => this.setState({ isMobile: window.innerWidth < 860 });
+    this.updateIsMobile();
+    window.addEventListener('resize', this.updateIsMobile);
+    const params = new URLSearchParams(window.location.search);
+    const initJabatan = params.get('jabatan') || 'ALL';
+    const initTeras = params.get('teras') || 'ALL';
+    const apply = data => this.setState({ rows: data.rows, jabatanList: data.jabatanList, terasList: data.terasList, jabatan: initJabatan, teras: initTeras });
+    fetch(API_URL + '?action=getDashboardData')
+      .then(res => res.json())
+      .then(json => {
+        if (json && json.success) apply(json.data);
+        else throw new Error('API returned failure');
+      })
+      .catch(err => {
+        console.error('Live fetch failed, using bundled fallback:', err);
+        import('./data.js').then(apply);
+      });
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateIsMobile);
+  }
+  submitKemaskini(bil) {
+    const draft = this.state.editDrafts[bil] || {};
+    const cadangan = (draft.cadangan || '').trim();
+    if (!cadangan) return;
+    this.setState(s => ({ submitState: { ...s.submitState, [bil]: 'sending' } }));
+    fetch(API_URL, {
+      method: 'POST', mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify({ action: 'submitKemaskini', bil, cadangan, catatan: draft.catatan || '' }),
+    }).then(() => this.setState(s => ({ submitState: { ...s.submitState, [bil]: 'sent' } })))
+      .catch(() => this.setState(s => ({ submitState: { ...s.submitState, [bil]: 'error' } })));
+  }
+  renderVals() {
+    const { rows, jabatanList, terasList, search, jabatan, teras, status, page, navOpen, isMobile, lainOpen } = this.state;
+    const q = search.trim().toLowerCase();
+    const filtered = rows.filter(r => {
+      if (jabatan !== 'ALL' && r.jabatan !== jabatan) return false;
+      if (teras !== 'ALL' && r.teras !== teras) return false;
+      if (status !== 'ALL' && r.status !== status) return false;
+      if (q && !(`${r.subsku} ${r.pic} ${r.jabatan} ${r.sasaran}`.toLowerCase().includes(q))) return false;
+      return true;
+    }).map(r => ({
+      ...r,
+      subskuText: r.subsku.includes(':') ? r.subsku.split(':').slice(1).join(':').trim() : r.subsku,
+      tone: STATUS_TONE[r.status] || 'coral',
+      approval: STATUS_APPROVAL[r.status] || '—',
+      source: STATUS_SOURCE[r.status] || '—',
+    }));
+    const pageCount = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+    const safePage = Math.min(page, pageCount);
+    const pageRows = filtered.slice((safePage - 1) * PAGE_SIZE, safePage * PAGE_SIZE).map((r, i) => {
+      const bilKey = `${r.bil}`;
+      const draft = this.state.editDrafts[bilKey] || {};
+      const submitState = this.state.submitState[bilKey];
+      const editOpen = !!this.state.editOpen[bilKey];
+      return {
+        ...r, rowBg: i % 2 === 0 ? '#fff' : '#FAFAFE',
+        editOpen, editLabel: editOpen ? 'Tutup' : 'Cadang Pembetulan',
+        onToggleEdit: () => this.setState(s => ({ editOpen: { ...s.editOpen, [bilKey]: !s.editOpen[bilKey] } })),
+        cadangan: draft.cadangan || '', catatanDraft: draft.catatan || '',
+        onCadangan: e => this.setState(s => ({ editDrafts: { ...s.editDrafts, [bilKey]: { ...s.editDrafts[bilKey], cadangan: e.target.value } } })),
+        onCatatanDraft: e => this.setState(s => ({ editDrafts: { ...s.editDrafts, [bilKey]: { ...s.editDrafts[bilKey], catatan: e.target.value } } })),
+        onSubmitKemaskini: () => this.submitKemaskini(bilKey),
+        submitDisabled: !(draft.cadangan || '').trim() || submitState === 'sending',
+        submitOpacity: (!(draft.cadangan || '').trim() || submitState === 'sending') ? .5 : 1,
+        submitLabel: submitState === 'sending' ? 'Menghantar...' : submitState === 'sent' ? 'Dihantar ✓' : submitState === 'error' ? 'Gagal — Cuba Lagi' : 'Hantar Cadangan Kemaskini',
+      };
+    });
+
+    const byTeras = {};
+    for (const r of rows) {
+      const t = r.teras || 'Lain-lain';
+      if (!byTeras[t]) byTeras[t] = { total: 0, valid: 0 };
+      byTeras[t].total++;
+      if (VALID_STATUSES.includes(r.status)) byTeras[t].valid++;
+    }
+    const terasSummary = (terasList.length ? terasList : Object.keys(byTeras)).map(label => {
+      const s = byTeras[label] || { total: 0, valid: 0 };
+      return { label, total: s.total, valid: s.valid, pct: s.total ? Math.round((s.valid / s.total) * 100) : 0 };
+    });
+
+    const toneHex = { lime: '#8BC53F', blue: 'var(--color-blue-violet)', pink: '#B06AD1', coral: 'var(--color-coral)' };
+    const statusOrder = ['VALID — KPI RASMI', 'VALID — RUJUKAN STRATEGIK', 'VALID — SAHKAN SUMBER', 'VALID DENGAN PINDAAN', 'CADANGAN BAHARU', 'BELUM DISAHKAN'];
+    const statusLegend = statusOrder.map(label => ({ label, tone: STATUS_TONE[label] || 'coral', count: rows.filter(r => r.status === label).length })).filter(s => s.count > 0);
+    const donutTotal = statusLegend.reduce((s, d) => s + d.count, 0) || 1;
+    let acc = 0;
+    const donutBackground = 'conic-gradient(' + statusLegend.map(d => {
+      const start = (acc / donutTotal) * 360; acc += d.count; const end = (acc / donutTotal) * 360;
+      return `${toneHex[d.tone] || 'var(--color-navy)'} ${start}deg ${end}deg`;
+    }).join(', ') + ')';
+
+    const byKluster = {};
+    for (const r of rows) {
+      const k = r.kluster || 'Lain-lain';
+      if (!byKluster[k]) byKluster[k] = { total: 0, valid: 0 };
+      byKluster[k].total++;
+      if (VALID_STATUSES.includes(r.status)) byKluster[k].valid++;
+    }
+    const klusterSummary = Object.keys(byKluster).map(name => {
+      const s = byKluster[name];
+      return { name, total: s.total, valid: s.valid, pending: s.total - s.valid, pct: s.total ? Math.round((s.valid / s.total) * 100) : 0 };
+    }).sort((a, b) => b.total - a.total);
+
+    const jabatanOptions = [{ value: 'ALL', label: 'Semua Jabatan/Unit' }, ...jabatanList.map(j => ({ value: j, label: j }))];
+    const terasOptions = [{ value: 'ALL', label: 'Semua TERAS' }, ...terasList.map(t => ({ value: t, label: t }))];
+    const statusOptions = ['ALL', 'VALID — KPI RASMI', 'VALID — RUJUKAN STRATEGIK', 'VALID — SAHKAN SUMBER', 'VALID DENGAN PINDAAN', 'CADANGAN BAHARU', 'BELUM DISAHKAN']
+      .map(s => ({ value: s, label: s === 'ALL' ? 'Semua Status' : s }));
+
+    return {
+      isMobile, isDesktop: !isMobile, showMobileMenu: isMobile && navOpen,
+      toggleNav: () => this.setState(s => ({ navOpen: !s.navOpen })),
+      lainOpen, toggleLain: () => this.setState(s => ({ lainOpen: !s.lainOpen })),
+      pageRows, count: filtered.length, totalRows: rows.length, isEmpty: filtered.length === 0,
+      rangeStart: filtered.length ? (safePage - 1) * PAGE_SIZE + 1 : 0, rangeEnd: Math.min(safePage * PAGE_SIZE, filtered.length),
+      page: safePage, pageCount, isFirstPage: safePage <= 1, isLastPage: safePage >= pageCount, showPagination: filtered.length > 0, hideMargin: filtered.length === 0,
+      sourceUrl: SOURCE_URL,
+      search, jabatan, teras, status, jabatanOptions, terasOptions, statusOptions,
+      onSearch: e => this.setState({ search: e.target.value, page: 1 }),
+      onJabatan: e => this.setState({ jabatan: e.target.value, page: 1 }),
+      onTeras: e => this.setState({ teras: e.target.value, page: 1 }),
+      onStatus: e => this.setState({ status: e.target.value, page: 1 }),
+      onReset: () => this.setState({ search: '', jabatan: 'ALL', teras: 'ALL', status: 'ALL', page: 1 }),
+      prevPage: () => this.setState(s => ({ page: Math.max(1, s.page - 1) })),
+      nextPage: () => this.setState(s => ({ page: Math.min(pageCount, s.page + 1) })),
+      terasSummary, klusterSummary, statusLegend, donutBackground,
+    };
+  }
+}
+</script>
+</body>
+</html>
