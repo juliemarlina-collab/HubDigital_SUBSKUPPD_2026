@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet><script src="./ds-base.js"></script><script src="./image-slot.js"></script></helmet>
+<div style="background:#F4F3FC;font-family:var(--font-body);color:var(--text-primary);position:relative">
+<div style="max-width:1200px;margin:24px auto;background:#fff;border-radius:28px;box-shadow:0 8px 28px rgba(10,14,74,.08);overflow:hidden">
+
+<div style="background:#fff;padding:20px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap">
+<a href="../../HomepageInfographic.dc.html" style="display:flex;align-items:center;gap:10px;text-decoration:none">
+<image-slot id="ppd-logo" shape="circle" style="width:44px;height:44px" placeholder="Logo"></image-slot>
+<div style="display:flex;flex-direction:column;line-height:1.2">
+<strong style="font-family:var(--font-display);font-weight:800;font-size:17px;color:var(--color-navy)">SUB SKU PPD 2026</strong>
+<span style="font-size:12px;font-weight:600;color:var(--text-muted)">Hub Pengurusan Strategik Digital</span>
+</div>
+</a>
+<sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+<button onClick="{{ toggleNav }}" style="border:1px solid var(--border-default);background:#fff;border-radius:10px;width:40px;height:36px;font-size:18px;color:var(--color-navy);cursor:pointer">☰</button>
+</sc-if>
+<sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+<div style="display:flex;gap:8px;align-items:center">
+<a href="../../HomepageInfographic.dc.html" style="text-decoration:none;color:var(--color-navy);font-weight:600;font-size:15px;padding:10px 14px">Utama</a>
+<a href="../rujukan-sku/RujukanLive.dc.html" style="text-decoration:none;color:var(--color-navy);font-weight:600;font-size:15px;padding:10px 14px">Rujukan</a>
+<a href="Workspace.dc.html" style="text-decoration:none;background:var(--color-blue-violet);color:#fff;font-weight:700;font-size:15px;padding:10px 24px;border-radius:999px">Workspace</a>
+<a href="../sku-2026-dashboard/SkuDashboard.dc.html" style="text-decoration:none;color:var(--color-navy);font-weight:600;font-size:15px;padding:10px 14px">Dashboard</a>
+<a href="../pentadbir-sku-2026/PentadbirSku.dc.html" style="text-decoration:none;color:var(--color-navy);font-weight:600;font-size:15px;padding:10px 14px">Pentadbir</a>
+</div>
+</sc-if>
+<sc-if value="{{ showMobileMenu }}" hint-placeholder-val="{{ false }}">
+<div style="width:100%;display:flex;flex-direction:column;gap:4px;padding-top:12px;border-top:1px solid var(--border-default)">
+<a href="../../HomepageInfographic.dc.html" style="text-decoration:none;color:var(--color-navy);font-weight:600;font-size:15px;padding:8px 0">Utama</a>
+<a href="../rujukan-sku/RujukanLive.dc.html" style="text-decoration:none;color:var(--color-navy);font-weight:600;font-size:15px;padding:8px 0">Rujukan</a>
+<a href="Workspace.dc.html" style="text-decoration:none;color:var(--color-blue-violet);font-weight:700;font-size:15px;padding:8px 0">Workspace</a>
+<a href="../sku-2026-dashboard/SkuDashboard.dc.html" style="text-decoration:none;color:var(--color-navy);font-weight:600;font-size:15px;padding:8px 0">Dashboard</a>
+<a href="../pentadbir-sku-2026/PentadbirSku.dc.html" style="text-decoration:none;color:var(--color-navy);font-weight:600;font-size:15px;padding:8px 0">Pentadbir</a>
+</div>
+</sc-if>
+</div>
+
+<div style="background:var(--color-blue-violet);margin:24px 32px 0;border-radius:24px;padding:40px">
+<div style="font-family:var(--font-display);font-weight:800;font-size:clamp(26px,3vw,36px);color:#fff">Semak &amp; Urus Rekod SUB-SKU 2026</div>
+<p style="max-width:680px;color:#fff;opacity:.92;font-size:15px;line-height:1.6;margin-top:12px">Cari, tapis dan semak rekod mengikut Jabatan/Unit, TERAS, status validasi dan kata kunci bagi mempercepat tindakan susulan.</p>
+<a href="../sku-2026-dashboard/SkuDashboard.dc.html" style="display:inline-block;margin-top:20px;background:var(--color-lime);color:var(--color-navy);font-weight:700;font-size:14px;padding:12px 22px;border-radius:999px;text-decoration:none">Buka Dashboard →</a>
+</div>
+
+<div style="padding:32px 32px 8px">
+<div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px">
+<input type="text" placeholder="Cari rekod..." value="{{ search }}" onChange="{{ onSearch }}" style="flex:2;min-width:220px;padding:12px 16px;border-radius:14px;border:1.5px solid var(--border-default);font-size:14px;font-family:var(--font-body)">
+<select value="{{ jabatan }}" onChange="{{ onJabatan }}" style="flex:1;min-width:170px;padding:12px 16px;border-radius:14px;border:1.5px solid var(--border-default);font-size:14px;font-family:var(--font-body)">
+<sc-for list="{{ jabatanOptions }}" as="j" hint-placeholder-count="30"><option value="{{ j.value }}">{{ j.label }}</option></sc-for>
+</select>
+<select value="{{ teras }}" onChange="{{ onTeras }}" style="flex:1;min-width:170px;padding:12px 16px;border-radius:14px;border:1.5px solid var(--border-default);font-size:14px;font-family:var(--font-body)">
+<sc-for list="{{ terasOptions }}" as="t" hint-placeholder-count="8"><option value="{{ t.value }}">{{ t.label }}</option></sc-for>
+</select>
+<select value="{{ status }}" onChange="{{ onStatus }}" style="flex:1;min-width:170px;padding:12px 16px;border-radius:14px;border:1.5px solid var(--border-default);font-size:14px;font-family:var(--font-body)">
+<sc-for list="{{ statusOptions }}" as="s" hint-placeholder-count="6"><option value="{{ s.value }}">{{ s.label }}</option></sc-for>
+</select>
+<button onClick="{{ onReset }}" style="border:1.5px solid var(--border-default);background:#fff;color:var(--color-navy);font-weight:700;font-size:13px;padding:0 20px;border-radius:14px;cursor:pointer">Reset</button>
+</div>
+
+<sc-if value="{{ hasActiveFilters }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px">
+<sc-for list="{{ activeChips }}" as="c" hint-placeholder-count="3">
+<span style="display:flex;align-items:center;gap:6px;background:#F1F0FC;color:var(--color-navy);font-size:12px;font-weight:600;padding:6px 10px;border-radius:999px">{{ c.label }}<a onClick="{{ c.onRemove }}" style="cursor:pointer;font-weight:800;color:var(--text-muted)">✕</a></span>
+</sc-for>
+</div>
+</sc-if>
+
+<div style="background:var(--color-navy);border-radius:20px;padding:20px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin-bottom:20px">
+<div style="border-top:3px solid var(--color-lime);border-radius:10px;background:rgba(255,255,255,.03);padding:14px 16px;display:flex;align-items:center;gap:12px">
+<x-import component-from-global-scope="SKUPPDDesignSystrem_48354e.IconCircle" tone="lime" size="38" hint-size="38,38">📋</x-import>
+<div><div style="font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--color-lime);line-height:1">{{ totalRecordsDisplay }}</div><div style="font-size:11px;color:rgba(255,255,255,.7);margin-top:3px">Rekod</div></div>
+</div>
+<div style="border-top:3px solid var(--color-blue-violet);border-radius:10px;background:rgba(255,255,255,.03);padding:14px 16px;display:flex;align-items:center;gap:12px">
+<x-import component-from-global-scope="SKUPPDDesignSystrem_48354e.IconCircle" tone="blue" size="38" hint-size="38,38">✓</x-import>
+<div><div style="font-family:var(--font-display);font-size:22px;font-weight:800;color:#8688FF;line-height:1">{{ validCountDisplay }}</div><div style="font-size:11px;color:rgba(255,255,255,.7);margin-top:3px">Disahkan</div></div>
+</div>
+<div style="border-top:3px solid var(--color-coral);border-radius:10px;background:rgba(255,255,255,.03);padding:14px 16px;display:flex;align-items:center;gap:12px">
+<x-import component-from-global-scope="SKUPPDDesignSystrem_48354e.IconCircle" tone="coral" size="38" hint-size="38,38">!</x-import>
+<div><div style="font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--color-coral);line-height:1">{{ attentionCountDisplay }}</div><div style="font-size:11px;color:rgba(255,255,255,.7);margin-top:3px">Perlu Tindakan</div></div>
+</div>
+<div style="border-top:3px solid var(--color-pink);border-radius:10px;background:rgba(255,255,255,.03);padding:14px 16px;display:flex;align-items:center;gap:12px">
+<x-import component-from-global-scope="SKUPPDDesignSystrem_48354e.IconCircle" tone="pink" size="38" hint-size="38,38">8</x-import>
+<div><div style="font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--color-pink);line-height:1">8</div><div style="font-size:11px;color:rgba(255,255,255,.7);margin-top:3px">TERAS</div></div>
+</div>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:16px">
+<div style="font-size:13px;color:var(--text-muted)">Memaparkan <strong style="color:var(--color-navy)">{{ rangeStart }}–{{ rangeEnd }}</strong> daripada <strong style="color:var(--color-navy)">{{ count }}</strong> rekod</div>
+<div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-muted)">
+<span>Papar</span>
+<select value="{{ pageSize }}" onChange="{{ onPageSize }}" style="padding:8px 12px;border-radius:12px;border:1.5px solid var(--border-default);font-size:13px;font-family:var(--font-body)">
+<option value="25">25</option><option value="50">50</option><option value="100">100</option><option value="200">200</option>
+</select>
+<span>setiap halaman</span>
+</div>
+</div>
+
+<sc-if value="{{ isEmpty }}" hint-placeholder-val="{{ false }}">
+<div style="padding:48px 24px;text-align:center;color:var(--text-muted);font-size:14px;background:#FAFAFE;border-radius:18px;margin-bottom:16px">Tiada rekod sepadan dengan carian/tapisan ini.</div>
+</sc-if>
+
+<div style="display:flex;flex-direction:column;gap:12px;margin-bottom:8px">
+<sc-for list="{{ paginated }}" as="r" hint-placeholder-count="10">
+<div style="border:1px solid var(--border-default);border-left:4px solid {{ r.accentColor }};border-radius:16px;padding:16px 18px;display:flex;align-items:center;gap:16px;background:#fff;flex-wrap:wrap">
+<x-import component-from-global-scope="SKUPPDDesignSystrem_48354e.IconCircle" tone="{{ r.iconTone }}" size="42" hint-size="42,42">{{ r.terasNum }}</x-import>
+<div style="flex:1;min-width:220px;display:flex;flex-direction:column;gap:6px">
+<div style="font-weight:700;font-size:13.5px;color:var(--color-navy);line-height:1.4">{{ r.subskuText }}</div>
+<div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:12px;color:var(--text-muted)">
+<span>PIC: {{ r.pic }}</span>
+<span style="background:var(--color-navy);color:#fff;font-weight:700;font-size:11px;padding:3px 9px;border-radius:999px">{{ r.jabatan }}</span>
+</div>
+</div>
+<x-import component-from-global-scope="SKUPPDDesignSystrem_48354e.Badge" tone="{{ r.tone }}" hint-size="100,22">{{ r.status }}</x-import>
+<span style="background:var(--color-navy);color:#fff;font-weight:700;font-size:12px;padding:6px 12px;border-radius:999px;white-space:nowrap">{{ r.teras }}</span>
+<div style="display:flex;gap:8px;flex-wrap:wrap">
+<button onClick="{{ r.onView }}" style="border:1.5px solid var(--border-default);background:#fff;color:var(--color-navy);font-weight:600;font-size:12px;padding:8px 14px;border-radius:10px;cursor:pointer">Lihat Butiran</button>
+<button onClick="{{ r.onCopy }}" style="border:1.5px solid var(--border-default);background:#fff;color:var(--color-navy);font-weight:600;font-size:12px;padding:8px 14px;border-radius:10px;cursor:pointer">{{ r.copyLabel }}</button>
+<a href="{{ sourceUrl }}" target="_blank" rel="noopener" style="border:1.5px solid var(--border-default);background:#fff;color:var(--color-navy);font-weight:600;font-size:12px;padding:8px 14px;border-radius:10px;text-decoration:none">Buka Sumber</a>
+</div>
+</div>
+</sc-for>
+</div>
+
+<sc-if value="{{ showPagination }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;justify-content:center;align-items:center;gap:16px;padding:16px 0 32px">
+<button onClick="{{ onPrevPage }}" disabled="{{ isFirstPage }}" style="padding:9px 18px;border-radius:999px;border:1.5px solid var(--border-default);background:#fff;font-size:13px;font-weight:600;color:var(--color-navy);cursor:pointer;opacity:{{ prevOpacity }}">← Sebelum</button>
+<div style="font-size:13px;color:var(--text-muted)">Halaman <strong style="color:var(--color-navy)">{{ pageDisplay }}</strong> daripada {{ totalPages }}</div>
+<button onClick="{{ onNextPage }}" disabled="{{ isLastPage }}" style="padding:9px 18px;border-radius:999px;border:1.5px solid var(--border-default);background:#fff;font-size:13px;font-weight:600;color:var(--color-navy);cursor:pointer;opacity:{{ nextOpacity }}">Seterusnya →</button>
+</div>
+</sc-if>
+</div>
+
+<div style="border-top:1px solid var(--border-default);padding:24px 32px;font-size:13px;color:var(--text-muted)">Sumber: MASTER SUB-SKU 2026 — Politeknik Port Dickson · Data langsung, dikemas kini setiap kunjungan</div>
+
+</div>
+
+<sc-if value="{{ drawerOpen }}" hint-placeholder-val="{{ false }}">
+<div onClick="{{ onCloseDrawer }}" style="position:fixed;inset:0;background:rgba(10,14,74,.35);z-index:20"></div>
+<div style="position:fixed;top:0;right:0;height:100%;width:min(420px,100%);background:#fff;z-index:21;box-shadow:-8px 0 30px rgba(10,14,74,.15);overflow-y:auto;padding:28px 28px 32px;display:flex;flex-direction:column;gap:16px">
+<div style="display:flex;justify-content:space-between;align-items:center">
+<div style="font-size:11px;font-weight:700;color:var(--color-blue-violet);text-transform:uppercase;letter-spacing:.06em">Rekod Terpilih</div>
+<button onClick="{{ onCloseDrawer }}" style="border:none;background:#F1F0FC;color:var(--color-navy);width:30px;height:30px;border-radius:50%;font-size:15px;font-weight:700;cursor:pointer">✕</button>
+</div>
+<div style="font-family:var(--font-display);font-weight:700;font-size:18px;color:var(--color-navy);line-height:1.35">{{ selected.subskuText }}</div>
+<x-import component-from-global-scope="SKUPPDDesignSystrem_48354e.Badge" tone="{{ selected.tone }}" hint-size="120,24">{{ selected.status }}</x-import>
+<div style="display:flex;flex-direction:column;gap:12px;font-size:13px">
+<div><div style="color:var(--text-muted);font-size:11px;text-transform:uppercase;letter-spacing:.04em;margin-bottom:3px">PIC</div>{{ selected.pic }}</div>
+<div><div style="color:var(--text-muted);font-size:11px;text-transform:uppercase;letter-spacing:.04em;margin-bottom:3px">Jabatan/Unit</div>{{ selected.jabatan }}</div>
+<div><div style="color:var(--text-muted);font-size:11px;text-transform:uppercase;letter-spacing:.04em;margin-bottom:3px">TERAS</div>{{ selected.teras }}</div>
+<div><div style="color:var(--text-muted);font-size:11px;text-transform:uppercase;letter-spacing:.04em;margin-bottom:3px">Kluster</div>{{ selected.kluster }}</div>
+<div><div style="color:var(--text-muted);font-size:11px;text-transform:uppercase;letter-spacing:.04em;margin-bottom:3px">Sasaran</div>{{ selected.sasaran }}</div>
+<div><div style="color:var(--text-muted);font-size:11px;text-transform:uppercase;letter-spacing:.04em;margin-bottom:3px">KPI</div>{{ selected.kpi }}</div>
+<div><div style="color:var(--text-muted);font-size:11px;text-transform:uppercase;letter-spacing:.04em;margin-bottom:3px">APACC</div>{{ selected.apacc }}</div>
+<div><div style="color:var(--text-muted);font-size:11px;text-transform:uppercase;letter-spacing:.04em;margin-bottom:3px">Takwim</div>{{ selected.takwim }}</div>
+<div><div style="color:var(--text-muted);font-size:11px;text-transform:uppercase;letter-spacing:.04em;margin-bottom:3px">Catatan</div>{{ selected.catatan }}</div>
+</div>
+<div style="display:flex;gap:8px;margin-top:8px">
+<button onClick="{{ selected.onCopy }}" style="flex:1;border:1.5px solid var(--border-default);background:#fff;color:var(--color-navy);font-weight:600;font-size:13px;padding:11px;border-radius:12px;cursor:pointer">{{ selected.copyLabel }}</button>
+<a href="{{ sourceUrl }}" target="_blank" rel="noopener" style="flex:1;text-align:center;border:1.5px solid var(--border-default);background:#fff;color:var(--color-navy);font-weight:600;font-size:13px;padding:11px;border-radius:12px;text-decoration:none">Buka Sumber</a>
+</div>
+
+<div style="border-top:1px solid var(--border-default);padding-top:16px;display:flex;flex-direction:column;gap:10px">
+<div style="font-size:11px;font-weight:700;color:var(--color-navy);text-transform:uppercase;letter-spacing:.04em">Cadangkan Kemaskini</div>
+<textarea placeholder="Cadangan status/kemaskini baharu..." value="{{ cadangan }}" onChange="{{ onCadangan }}" rows="2" style="width:100%;padding:10px 12px;border-radius:10px;border:1.5px solid var(--border-default);font-size:13px;font-family:var(--font-body);resize:vertical"></textarea>
+<textarea placeholder="Catatan tambahan (pilihan)..." value="{{ catatan }}" onChange="{{ onCatatan }}" rows="2" style="width:100%;padding:10px 12px;border-radius:10px;border:1.5px solid var(--border-default);font-size:13px;font-family:var(--font-body);resize:vertical"></textarea>
+<button onClick="{{ onSubmitKemaskini }}" disabled="{{ submitDisabled }}" style="border:none;background:var(--color-blue-violet);color:#fff;font-weight:700;font-size:13px;padding:12px;border-radius:12px;cursor:pointer;opacity:{{ submitOpacity }}">{{ submitLabel }}</button>
+</div>
+
+<button onClick="{{ onCloseDrawer }}" style="border:1.5px solid var(--color-navy);background:var(--color-navy);color:#fff;font-weight:700;font-size:13px;padding:12px;border-radius:12px;cursor:pointer">Tutup</button>
+</div>
+</sc-if>
+
+</div>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 56"><rect width="80" height="56" fill="#5457FF"/><circle cx="40" cy="28" r="14" fill="#CFFA66"/><text x="40" y="50" font-size="6" fill="#fff" text-anchor="middle" font-family="sans-serif">WORKSPACE</text></svg></template>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1200,&quot;height&quot;:1000}}">
+const API_URL = 'https://script.google.com/macros/s/AKfycbwZ_fBBMI1bavMM4Nhfc5Sea_yO_GH-tleFNCW7kYx31ZlsiIuMgFLDdD-_lLOkakmv/exec';
+const SOURCE_URL = 'https://docs.google.com/spreadsheets/d/1OJaR_36HZ2ggSP2mj17zzyGTEXTAXcl8BIxuyTqr8kU/edit';
+
+class Component extends DCLogic {
+  state = {
+    rows: [], jabatanOptions: ['ALL'], terasOptions: ['ALL'], dataLoaded: false,
+    search: '', jabatan: 'ALL', teras: 'ALL', status: 'ALL',
+    pageSize: '25', page: 0, copied: {}, selectedBil: null,
+    cadangan: '', catatan: '', submitState: 'idle',
+    navOpen: false, isMobile: false,
+  };
+  componentDidMount() {
+    this.updateIsMobile = () => this.setState({ isMobile: window.innerWidth < 860 });
+    this.updateIsMobile();
+    window.addEventListener('resize', this.updateIsMobile);
+    this._loadData();
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateIsMobile);
+  }
+  submitKemaskini(r) {
+    const { cadangan, catatan } = this.state;
+    if (!cadangan.trim()) return;
+    this.setState({ submitState: 'sending' });
+    fetch(API_URL, {
+      method: 'POST', mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify({ action: 'submitKemaskini', bil: r.bil, cadangan, catatan }),
+    }).then(() => this.setState({ submitState: 'sent', cadangan: '', catatan: '' }))
+      .catch(() => this.setState({ submitState: 'error' }));
+  }
+  _loadData() {
+    const apply = data => this.setState({ rows: data.rows, jabatanOptions: ['ALL', ...data.jabatanList], terasOptions: ['ALL', ...data.terasList], dataLoaded: true });
+    fetch(API_URL + '?action=getWorkspaceFilters')
+      .then(res => res.json())
+      .then(json => {
+        if (json && json.success) apply(json.data);
+        else throw new Error('API returned failure');
+      })
+      .catch(err => {
+        console.error('Live fetch failed, using bundled fallback:', err);
+        import('./data.js').then(apply);
+      });
+  }
+  statusTone(status) {
+    if (status === 'VALID — KPI RASMI') return 'lime';
+    if (status === 'VALID — RUJUKAN STRATEGIK' || status === 'VALID — SAHKAN SUMBER') return 'blue';
+    if (status === 'VALID DENGAN PINDAAN') return 'pink';
+    return 'coral';
+  }
+  terasAccent(teras) {
+    const m = /T(\d+)/.exec(teras || '');
+    const idx = m ? (parseInt(m[1], 10) - 1) % 4 : 0;
+    const tones = ['lime', 'blue', 'pink', 'coral'];
+    const hexes = ['#8BC53F', 'var(--color-blue-violet)', '#B06AD1', 'var(--color-coral)'];
+    return { iconTone: tones[idx], accentColor: hexes[idx], terasNum: m ? m[1] : '?' };
+  }
+  copyRecord(r) {
+    const text = `${r.pic} — ${r.subsku}\nJabatan/Unit: ${r.jabatan}\nSasaran: ${r.sasaran}\nTERAS: ${r.teras}\nStatus: ${r.status}`;
+    const done = () => { this.setState(s => ({ copied: { ...s.copied, [r.bil]: true } })); setTimeout(() => this.setState(s => ({ copied: { ...s.copied, [r.bil]: false } })), 1500); };
+    if (navigator.clipboard) navigator.clipboard.writeText(text).then(done).catch(done);
+    else done();
+  }
+  renderVals() {
+    const { rows, search, jabatan, teras, status, jabatanOptions, terasOptions, page, copied, selectedBil, cadangan, catatan, submitState, dataLoaded, navOpen, isMobile } = this.state;
+    let { pageSize } = this.state;
+    const q = search.trim().toLowerCase();
+    const filteredAll = rows.filter(r => {
+      if (jabatan !== 'ALL' && r.jabatan !== jabatan) return false;
+      if (teras !== 'ALL' && r.teras !== teras) return false;
+      if (status !== 'ALL' && r.status !== status) return false;
+      if (q && !(`${r.subsku} ${r.pic} ${r.jabatan} ${r.sasaran}`.toLowerCase().includes(q))) return false;
+      return true;
+    });
+    const count = filteredAll.length;
+    const sizeNum = parseInt(pageSize, 10);
+    const totalPages = Math.max(1, Math.ceil(count / sizeNum));
+    const curPage = Math.min(page, totalPages - 1);
+    const rangeStartIdx = curPage * sizeNum;
+    const mapRecord = r => ({
+      ...r,
+      subskuText: r.subsku.includes(':') ? r.subsku.split(':').slice(1).join(':').trim() : r.subsku,
+      tone: this.statusTone(r.status),
+      ...this.terasAccent(r.teras),
+      copyLabel: copied[r.bil] ? 'Disalin ✓' : 'Salin Rekod',
+      onCopy: () => this.copyRecord(r),
+      onView: () => this.setState({ selectedBil: r.bil }),
+    });
+    const paginated = filteredAll.slice(rangeStartIdx, rangeStartIdx + sizeNum).map(mapRecord);
+    const rangeStart = count === 0 ? 0 : rangeStartIdx + 1;
+    const rangeEnd = Math.min(rangeStartIdx + sizeNum, count);
+
+    const selectedRow = selectedBil != null ? rows.find(r => r.bil === selectedBil) : null;
+    const selected = selectedRow ? mapRecord(selectedRow) : null;
+
+    const activeChips = [];
+    if (jabatan !== 'ALL') activeChips.push({ label: jabatan, onRemove: () => this.setState({ jabatan: 'ALL', page: 0 }) });
+    if (teras !== 'ALL') activeChips.push({ label: teras, onRemove: () => this.setState({ teras: 'ALL', page: 0 }) });
+    if (status !== 'ALL') activeChips.push({ label: status, onRemove: () => this.setState({ status: 'ALL', page: 0 }) });
+    if (q) activeChips.push({ label: `"${search}"`, onRemove: () => this.setState({ search: '', page: 0 }) });
+
+    const isValid = st => typeof st === 'string' && st.startsWith('VALID');
+    const totalRecords = rows.length;
+    const validCount = rows.filter(r => isValid(r.status)).length;
+    const attentionCount = rows.filter(r => r.status === 'BELUM DISAHKAN' || r.status === 'CADANGAN BAHARU').length;
+
+    return {
+      isMobile, isDesktop: !isMobile, showMobileMenu: isMobile && navOpen,
+      toggleNav: () => this.setState(s => ({ navOpen: !s.navOpen })),
+      totalRecordsDisplay: dataLoaded ? totalRecords : '—',
+      validCountDisplay: dataLoaded ? validCount : '—',
+      attentionCountDisplay: dataLoaded ? attentionCount : '—',
+      paginated, count, isEmpty: count === 0,
+      search, jabatan, teras, status,
+      jabatanOptions: jabatanOptions.map(v => ({ value: v, label: v === 'ALL' ? 'Jabatan/Unit' : v })),
+      terasOptions: terasOptions.map(v => ({ value: v, label: v === 'ALL' ? 'TERAS' : v })),
+      pageSize, rangeStart, rangeEnd,
+      showPagination: totalPages > 1,
+      pageDisplay: curPage + 1, totalPages,
+      isFirstPage: curPage === 0, isLastPage: curPage >= totalPages - 1,
+      prevOpacity: curPage === 0 ? .45 : 1, nextOpacity: curPage >= totalPages - 1 ? .45 : 1,
+      statusOptions: ['ALL', 'VALID — KPI RASMI', 'VALID — RUJUKAN STRATEGIK', 'VALID — SAHKAN SUMBER', 'VALID DENGAN PINDAAN', 'CADANGAN BAHARU', 'BELUM DISAHKAN'].map(v => ({ value: v, label: v === 'ALL' ? 'Status' : v })),
+      onSearch: e => this.setState({ search: e.target.value, page: 0 }),
+      onJabatan: e => this.setState({ jabatan: e.target.value, page: 0 }),
+      onTeras: e => this.setState({ teras: e.target.value, page: 0 }),
+      onStatus: e => this.setState({ status: e.target.value, page: 0 }),
+      onReset: () => this.setState({ search: '', jabatan: 'ALL', teras: 'ALL', status: 'ALL', page: 0 }),
+      onPageSize: e => this.setState({ pageSize: e.target.value, page: 0 }),
+      onPrevPage: () => this.setState(s => ({ page: Math.max(0, s.page - 1) })),
+      onNextPage: () => this.setState(s => ({ page: Math.min(totalPages - 1, s.page + 1) })),
+      hasActiveFilters: activeChips.length > 0, activeChips,
+      totalRecords, validCount, attentionCount,
+      sourceUrl: SOURCE_URL,
+      drawerOpen: !!selected, selected: selected || {},
+      onCloseDrawer: () => this.setState({ selectedBil: null, cadangan: '', catatan: '', submitState: 'idle' }),
+      cadangan, catatan,
+      onCadangan: e => this.setState({ cadangan: e.target.value }),
+      onCatatan: e => this.setState({ catatan: e.target.value }),
+      onSubmitKemaskini: () => selectedRow && this.submitKemaskini(selectedRow),
+      submitDisabled: !cadangan.trim() || submitState === 'sending',
+      submitOpacity: (!cadangan.trim() || submitState === 'sending') ? .5 : 1,
+      submitLabel: submitState === 'sending' ? 'Menghantar...' : submitState === 'sent' ? 'Dihantar ✓' : 'Hantar Cadangan Kemaskini',
+    };
+  }
+}
+
+</script>
+</body>
+</html>
