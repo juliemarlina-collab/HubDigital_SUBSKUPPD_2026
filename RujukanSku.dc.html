@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet><script src="./ds-base.js"></script><script src="./image-slot.js"></script></helmet>
+<div style="background:#F4F3FC;font-family:var(--font-body);color:var(--text-primary);position:relative">
+<div style="max-width:1200px;margin:24px auto;background:#fff;border-radius:28px;box-shadow:0 8px 28px rgba(10,14,74,.08);overflow:hidden">
+
+<div style="background:#fff;padding:20px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap">
+<a href="../../HomepageInfographic.dc.html" style="display:flex;align-items:center;gap:10px;text-decoration:none">
+<image-slot id="ppd-logo" shape="circle" style="width:44px;height:44px" placeholder="Logo"></image-slot>
+<div style="display:flex;flex-direction:column;line-height:1.2">
+<strong style="font-family:var(--font-display);font-weight:800;font-size:17px;color:var(--color-navy)">SUB SKU PPD 2026</strong>
+<span style="font-size:12px;font-weight:600;color:var(--text-muted)">Hub Pengurusan Strategik Digital</span>
+</div>
+</a>
+<sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+<button onClick="{{ toggleNav }}" style="border:1px solid var(--border-default);background:#fff;border-radius:10px;width:40px;height:36px;font-size:18px;color:var(--color-navy);cursor:pointer">☰</button>
+</sc-if>
+<sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+<div style="display:flex;gap:8px;align-items:center">
+<a href="../../HomepageInfographic.dc.html" style="text-decoration:none;color:var(--color-navy);font-weight:600;font-size:15px;padding:10px 14px">Utama</a>
+<a href="RujukanLive.dc.html" style="text-decoration:none;background:var(--color-blue-violet);color:#fff;font-weight:700;font-size:15px;padding:10px 24px;border-radius:999px">Rujukan</a>
+<a href="../workspace-sub-sku/Workspace.dc.html" style="text-decoration:none;color:var(--color-navy);font-weight:600;font-size:15px;padding:10px 14px">Workspace</a>
+<a href="../sku-2026-dashboard/SkuDashboard.dc.html" style="text-decoration:none;color:var(--color-navy);font-weight:600;font-size:15px;padding:10px 14px">Dashboard</a>
+<a href="../pentadbir-sku-2026/PentadbirSku.dc.html" style="text-decoration:none;color:var(--color-navy);font-weight:600;font-size:15px;padding:10px 14px">Pentadbir</a>
+</div>
+</sc-if>
+<sc-if value="{{ showMobileMenu }}" hint-placeholder-val="{{ false }}">
+<div style="width:100%;display:flex;flex-direction:column;gap:4px;padding-top:12px;border-top:1px solid var(--border-default)">
+<a href="../../HomepageInfographic.dc.html" style="text-decoration:none;color:var(--color-navy);font-weight:600;font-size:15px;padding:8px 0">Utama</a>
+<a href="RujukanLive.dc.html" style="text-decoration:none;color:var(--color-blue-violet);font-weight:700;font-size:15px;padding:8px 0">Rujukan</a>
+<a href="../workspace-sub-sku/Workspace.dc.html" style="text-decoration:none;color:var(--color-navy);font-weight:600;font-size:15px;padding:8px 0">Workspace</a>
+<a href="../sku-2026-dashboard/SkuDashboard.dc.html" style="text-decoration:none;color:var(--color-navy);font-weight:600;font-size:15px;padding:8px 0">Dashboard</a>
+<a href="../pentadbir-sku-2026/PentadbirSku.dc.html" style="text-decoration:none;color:var(--color-navy);font-weight:600;font-size:15px;padding:8px 0">Pentadbir</a>
+</div>
+</sc-if>
+</div>
+
+<div style="background:var(--color-blue-violet);margin:24px 32px 0;border-radius:24px;padding:40px">
+<div style="font-family:var(--font-display);font-weight:800;font-size:clamp(26px,3vw,36px);color:#fff">Rujukan SKU 2026</div>
+<p style="max-width:680px;color:#fff;opacity:.92;font-size:15px;line-height:1.6;margin-top:12px">Dokumen rujukan dan pautan portal rasmi bagi menyokong proses pemetaan, pengagihan, pengesahan dan pelaksanaan SKU 2026 — dikemas kini terus daripada hamparan REFERENCES.</p>
+</div>
+
+<div style="padding:32px 32px 8px">
+<x-import component-from-global-scope="SKUPPDDesignSystrem_48354e.NotchedCard" tone="lime" hint-size="100%,180px" style="width:100%">
+<h2 style="font-family:var(--font-display);font-weight:700;font-size:20px;color:var(--color-navy);margin:0 0 16px">Tiga Kategori Dokumen</h2>
+<div style="display:flex;gap:28px;flex-wrap:wrap">
+<div style="display:flex;align-items:center;gap:10px">
+<x-import component-from-global-scope="SKUPPDDesignSystrem_48354e.IconCircle" size="36" tone="coral" hint-size="36,36">1</x-import>
+<span style="font-weight:700;color:var(--color-navy);font-size:14px">Dokumen Utama</span>
+</div>
+<div style="display:flex;align-items:center;gap:10px">
+<x-import component-from-global-scope="SKUPPDDesignSystrem_48354e.IconCircle" size="36" tone="pink" hint-size="36,36">2</x-import>
+<span style="font-weight:700;color:var(--color-navy);font-size:14px">Dokumen Dalaman (PPD)</span>
+</div>
+<div style="display:flex;align-items:center;gap:10px">
+<x-import component-from-global-scope="SKUPPDDesignSystrem_48354e.IconCircle" size="36" tone="blue" hint-size="36,36">3</x-import>
+<span style="font-weight:700;color:var(--color-navy);font-size:14px">Dokumen Sokongan</span>
+</div>
+</div>
+</x-import>
+</div>
+
+<sc-if value="{{ isLoading }}" hint-placeholder-val="{{ false }}">
+<div style="padding:40px 32px;color:var(--text-muted);font-size:14px">Memuatkan senarai rujukan...</div>
+</sc-if>
+
+<sc-if value="{{ isError }}" hint-placeholder-val="{{ false }}">
+<div style="margin:32px;background:#FDECEC;border:1px solid #F5C2C2;border-radius:16px;padding:20px;color:#8A2E2E;font-size:14px">Gagal memuatkan data rujukan. Sila cuba muat semula halaman.</div>
+</sc-if>
+
+<sc-if value="{{ isEmpty }}" hint-placeholder-val="{{ false }}">
+<div style="margin:32px;color:var(--text-muted);font-size:14px">Tiada dokumen rujukan aktif buat masa ini.</div>
+</sc-if>
+
+<sc-for list="{{ groups }}" as="g" hint-placeholder-count="0">
+<div style="padding:40px 32px 8px">
+<div style="display:flex;align-items:center;gap:14px;margin-bottom:20px">
+<x-import component-from-global-scope="SKUPPDDesignSystrem_48354e.IconCircle" size="44" tone="{{ g.tone }}" hint-size="44,44">{{ g.n }}</x-import>
+<h2 style="font-family:var(--font-display);font-weight:700;font-size:20px;color:var(--color-navy);margin:0">{{ g.label }}</h2>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px">
+<sc-for list="{{ g.items }}" as="doc" hint-placeholder-count="3">
+<a href="{{ doc.url }}" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;align-items:center;gap:18px;border:1px solid var(--border-default);border-radius:16px;padding:16px 20px">
+<x-import component-from-global-scope="SKUPPDDesignSystrem_48354e.Badge" tone="coral" hint-size="60,28">DOC</x-import>
+<div>
+<div style="font-size:15px;font-weight:600;color:var(--color-navy)">{{ doc.title }}</div>
+<div style="font-size:12px;color:var(--text-muted);margin-top:2px">{{ doc.meta }}</div>
+</div>
+</a>
+</sc-for>
+</div>
+</div>
+</sc-for>
+
+<div style="border-top:1px solid var(--border-default);padding:24px 32px;font-size:13px;color:var(--text-muted)">© 2026 Politeknik Port Dickson. Hak Cipta Terpelihara. &nbsp;·&nbsp; Dibangunkan oleh Julie Marlina binti Hasan — Sekretariat Data &amp; Maklumat, Jawatankuasa Pengurusan Strategik PPD.</div>
+
+</div>
+</div>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 56"><rect width="80" height="56" fill="#5457FF"/><circle cx="20" cy="28" r="10" fill="#FF6568"/><circle cx="40" cy="28" r="10" fill="#F2B0F5"/><circle cx="60" cy="28" r="10" fill="#5457FF"/><text x="40" y="50" font-size="6" fill="#fff" text-anchor="middle" font-family="sans-serif">RUJUKAN</text></svg></template>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1200,&quot;height&quot;:1000}}">
+const CATEGORY_META = {
+  UTAMA: { label: 'Dokumen Utama', tone: 'coral', n: '1' },
+  DALAMAN: { label: 'Dokumen Dalaman (PPD)', tone: 'pink', n: '2' },
+  SOKONGAN: { label: 'Dokumen Sokongan', tone: 'blue', n: '3' },
+};
+// Reads still go through our own Apps Script (this project's Code.gs/
+// ReferenceService.gs) — the confirmed "one true backend" deployment
+// from GitHub only exposes a write action (submitKemaskini) today and
+// has no getReferenceData equivalent to switch to.
+const API_URL = 'https://script.google.com/macros/s/AKfycbwZ_fBBMI1bavMM4Nhfc5Sea_yO_GH-tleFNCW7kYx31ZlsiIuMgFLDdD-_lLOkakmv/exec';
+
+class Component extends DCLogic {
+  state = { references: null, loadFailed: false, navOpen: false, isMobile: false };
+  componentDidMount() {
+    this.updateIsMobile = () => this.setState({ isMobile: window.innerWidth < 860 });
+    this.updateIsMobile();
+    window.addEventListener('resize', this.updateIsMobile);
+    fetch(API_URL + '?action=getReferenceData')
+      .then(res => res.json())
+      .then(json => {
+        if (json && json.success) this.setState({ references: json.data });
+        else throw new Error('API returned failure: ' + JSON.stringify(json));
+      })
+      .catch(err => {
+        console.error('getReferenceData failed:', err);
+        this.setState({ loadFailed: true });
+      });
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateIsMobile);
+  }
+  renderVals() {
+    const { references, loadFailed, navOpen, isMobile } = this.state;
+    const isLoading = references === null && !loadFailed;
+    const isError = loadFailed;
+    const isEmpty = !isLoading && !isError && references.length === 0;
+
+    let groups = [];
+    if (references && references.length) {
+      const byCat = {};
+      const order = [];
+      references.forEach(r => {
+        const cat = r.category || 'LAIN-LAIN';
+        if (!byCat[cat]) { byCat[cat] = []; order.push(cat); }
+        byCat[cat].push(r);
+      });
+      groups = order.map(cat => {
+        const meta = CATEGORY_META[cat] || { label: cat, tone: 'blue', n: '•' };
+        return {
+          label: meta.label, tone: meta.tone, n: meta.n,
+          items: byCat[cat].map(doc => ({
+            title: doc.title, url: doc.url || '#',
+            meta: [doc.source, doc.year].filter(Boolean).join(' · ') || '—',
+          })),
+        };
+      });
+    }
+
+    return {
+      isMobile, isDesktop: !isMobile, showMobileMenu: isMobile && navOpen,
+      toggleNav: () => this.setState(s => ({ navOpen: !s.navOpen })),
+      isLoading, isError, isEmpty, groups,
+    };
+  }
+}
+
+</script>
+</body>
+</html>
